@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/personas', 'PersonaController@index')->name('personas.index');
+Route::get('/personas/create', 'PersonaController@create')->name('personas.create');
+Route::post('personas/create', 'PersonaController@store')->name('personas.store');
+Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');
