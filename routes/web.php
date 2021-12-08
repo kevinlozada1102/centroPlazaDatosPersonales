@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('personas.modal');
 });
 
 Route::get('/personas', 'PersonaController@index')->name('personas.index');

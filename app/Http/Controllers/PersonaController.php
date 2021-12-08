@@ -11,7 +11,7 @@ class PersonaController extends Controller
     public function index()
     {
        $personas = Persona::all();
-        return view('personas.index')->with('personas', $personas);
+        return view('personas.modal')->with('personas', $personas);
     }
 
 
@@ -26,9 +26,9 @@ class PersonaController extends Controller
         $request->validate([
             'nombre'=>'required',
             'apellido'=>'required',
-            'email'=>'required',
-            'dni'=>'required |max:8',
-            'telefono'=>'required |max:9',
+            'email'=>'required|unique:personas',
+            'dni'=>'required |max:8 |min:8',
+            'telefono'=>'required | min:9 |max:9',
             'direccion'=>'required'
         ]);
 
@@ -44,7 +44,7 @@ class PersonaController extends Controller
         $persona->direccion = $request->direccion;
 
         $persona->save();
-        return redirect()->route('personas.index', $persona)->with('mensaje','Se registro correctamente');
+        return redirect()->route('personas.create', $persona)->with('mensaje','Se registro correctamente');
     }
 
     public function show($id)
@@ -57,13 +57,6 @@ class PersonaController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //

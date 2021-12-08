@@ -8,24 +8,24 @@
     <br>
     <div >
 
-    <h1 class=" text-center">Personas Registradas</h1>
-        <hr>
+    <h1 class="text1">Personas Registradas</h1>
 
-    <table class="table table-silver table-striped mt-8 " class=table-primary" >
-        <thead  class="bg-danger text-white text-center">
-          <tr>
+    <table  class="table" >
+        <thead  class=" bg-info text-white text-center">
+          <tr class="trbody">
               <th scope="col">N°</th>
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">Email</th>
               <th scope="col">DNI</th>
               <th scope="col">Telefono</th>
-              <th scope="col">Direccion</th>X
+              <th scope="col">Direccion</th>
+              <th scope="col">Accion</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="text-center">
            @foreach($personas as $persona)
-               <tr>
+               <tr class="tbody">
                    <td>{{$persona->id}}</td>
                     <td>{{$persona->nombre}}</td>
                    <td>{{$persona->apellido}}</td>
