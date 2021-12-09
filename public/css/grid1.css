@@ -1,13 +1,11 @@
 .container{
     display: grid;
     grid-template-rows: 100px 100px;
-    background-color: #7267CB ;
-   ;
 }
 .containere{
     display: grid;
     grid-template-rows: 100px 100px;
-    background-color: #6E3CBC;
+    background-color: #f9f9fa;
 ;
 
 }
@@ -24,7 +22,7 @@
     font-style: initial;
     font-weight: bolder;
     font-family: "Copperplate Gothic Bold";
-    color: #70ee65;
+    color: #fa0030;
 }
 
 .text1{
@@ -52,9 +50,11 @@
     font-family: "Times New Roman";
     font-size: large;
     color: #2d3748;
+}
 
-
-
+.texer{
+    font-weight: bolder;
+    color: #920505;
 
 }
 
@@ -62,7 +62,7 @@
 
 
 .body{
-    background-color: rgb(146, 226, 195);
+    background-color: rgb(244, 238, 246);
     height: 1000px;
     width: 1300px;
     border: blue;
@@ -72,7 +72,7 @@
 .formulario{
     margin: 0%;
     width: 730px;
-    background-color:#B8E4F0;
+    background-color: #c5e8f1;
     padding: 20px;
     border-radius: 10px;
 }
@@ -91,7 +91,7 @@
     width: 100%;
     border-collapse: collapse;
     border-spacing:10px;
-    background-color: #53a0c7;
+    background-color: #e9f1f5;
 
 
 
@@ -105,6 +105,12 @@
     font-size: medium;
 
 }
+.texerror{
+    font-family: "Times New Roman";
+    font-size: medium;
+    color: #fa0030;
+}
+
 
 .trbody{
     text-align: center;

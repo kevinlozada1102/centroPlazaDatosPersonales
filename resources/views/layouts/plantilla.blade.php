@@ -11,8 +11,8 @@
 
     <title>DATOS PERSONALES</title>
 </head>
-<body class="body">
-<div class="bloque text"  >
+<body>
+<div class=" text"  >
     Datos Personales
 </div>
 

@@ -18,7 +18,7 @@ class CreatePersonasTable extends Migration
             $table->string('nombre')->length(100);
             $table->string('apellido')->length(100);
             $table->string('email')->unique();
-            $table->char('sexo')->length(1);
+            $table->string('sexo');
             $table->date('fechanac' );
             $table->integer('dni')->length(11)->unique();
             $table->integer('telefono')->length(9)->unique();

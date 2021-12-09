@@ -6,21 +6,11 @@
 
 @section('contenido')
 
-    <div align="center"><img src="{{ asset('img/pers.jpg')}}"  alt="" class="logo-main"></div>
+    <div ><img src="{{ asset('img/pers.jpg')}}"  alt="" class="logo-main"></div>
 
     <div  class="mx-auto "  style="width: 400px;" class="container-fluid" style="background-color: lightseagreen">
 
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>
-                            {{$error}}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
 
         @if(session('mensaje'))
             <div class="alert alert-success">
@@ -29,58 +19,90 @@
 
         @endif
 
-
+<div  style="align-content:center " >
     <form action="{{route('personas.create')}}" method="POST" class="formulario">
         {{ csrf_field() }}
-
+      <div class="row">
+          <div class="col">
         <div class="form-group "  >
             <label for="nombre"  class="text2">Nombre</label>
             <input type="text" class="form-control"  placeholder="Ingresa tu nombre"  name="nombre" value="{{old('nombre')}}">
             @if ($errors->has('nombre'))
-                <p>*{{$errors->first('nombre') }}</p>
+                <p class="texer">*{{$errors->first('nombre') }}</p>
             @endif
         </div>
+        </div>
         <br>
-
+          <div class="col">
         <div class="form-group">
             <label for="apellido" class="text2">Apellido</label>
             <input type="text" class="form-control"  placeholder="Ingresa tu apellido"  name="apellido" value="{{old('apellido')}}">
             @if ($errors->has('apellido'))
-                <p>*{{$errors->first('apellido') }}</p>
+                <p class="texer">*{{$errors->first('apellido') }}</p>
             @endif
         </div>
-        <br>
-
-        <div class="form-group">
-            <label for="email" class="text2">Email</label>
-            <input class="form-control"  placeholder="Ingresa un email válido" type="email" name="email" value="{{old('email')}}">
-            @if ($errors->has('email'))
-                <p>*{{$errors->first('email') }}</p>
-            @endif
         </div>
-        <br>
-
+      </div>
+        <div class="row">
+            <div class="col">
         <div class="form-group">
             <label for="dni" class="text2">DNI</label>
             <input  class="form-control"  placeholder=" Ingresa tu DNI" type="number" name="dni" value="{{old('dni')}}">
             @if ($errors->has('dni'))
-                <p>*{{$errors->first('dni') }}</p>
+                <p class="texer">*{{$errors->first('dni') }}</p>
             @endif
         </div>
+        </div>
+            <div class="col">
+        <div class="form-group">
+            <label for="sexo" class="text2">Sexo</label>
+            <select id="sexo" name="sexo" class="form-control"  value="{{old('sexo')}}" >
+                <option value="" {{ old('sexo') == '' ? 'selected' : '' }}>Seleccione sexo</option>
+                <option value="F" {{ old('sexo') == 'F' ? 'selected' : '' }}>Femenino</option>
+                <option value="M" {{ old('sexo') == 'M' ? 'selected' : '' }}>Masculino</option>
+            </select>
+            @if ($errors->has('sexo'))
+                <p class="texer">*{{$errors->first('sexo') }}</p>
+            @endif
+        </div>
+        </div>
+
         <br>
+            <div class="row">
+                <div class="col">
+        <div class="form-group">
+            <label for="fechanac" class="text2">Fecha De Nacimiento</label>
+            <input  class="form-control"   placeholder=" Seleccione su fecha " type="date" name="fechanac" value="{{old('fechanac')}}">
+            @if ($errors->has('fechanac'))
+                <p class="texer">*{{$errors->first('fechanac') }}</p>
+            @endif
+        </div>
+        </div>
+        <br>
+                <div class="col">
         <div class="form-group">
             <label for="telefono" class="text2">Telefono</label>
             <input  class="form-control"  placeholder="Ingresa tu telefono" type="number" name="telefono" value="{{old('telefono')}}">
             @if ($errors->has('telefono'))
-                <p>*{{$errors->first('telefono') }}</p>
+                <p class="texer">*{{$errors->first('telefono') }}</p>
             @endif
         </div>
+        </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="email" class="text2">Email</label>
+                    <input class="form-control"  placeholder="Ingresa un email válido" type="email" name="email" value="{{old('email')}}">
+                    @if ($errors->has('email'))
+                        <p class="texer">*{{$errors->first('email') }}</p>
+                    @endif
+                </div>
         <br>
         <div class="form-group">
             <label for="direccion" class="text2">Direccion</label>
             <input type="text" class="form-control"  placeholder="Ingresa tu direccion" type="text" name="direccion" value="{{old('direccion')}}">
             @if ($errors->has('direccion'))
-                <p>*{{$errors->first('direccion') }}</p>
+                <p class="texer">*{{$errors->first('direccion') }}</p>
             @endif
         </div>
         <div class="form-group">
@@ -165,7 +187,20 @@
             </div>
         </div>
 
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>
+                            {{$error}}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     </form>
+    </div>
     </div>
     <br>
 

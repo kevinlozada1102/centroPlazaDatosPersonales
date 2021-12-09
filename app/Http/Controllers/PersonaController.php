@@ -11,7 +11,7 @@ class PersonaController extends Controller
     public function index()
     {
        $personas = Persona::all();
-        return view('personas.modal')->with('personas', $personas);
+        return view('personas.index')->with('personas', $personas);
     }
 
 
@@ -26,6 +26,8 @@ class PersonaController extends Controller
         $request->validate([
             'nombre'=>'required',
             'apellido'=>'required',
+            'sexo'=>'required',
+            'fechanac'=>'required',
             'email'=>'required|unique:personas',
             'dni'=>'required |max:8 |min:8',
             'telefono'=>'required | min:9 |max:9',
@@ -38,6 +40,8 @@ class PersonaController extends Controller
 
         $persona->nombre = $request->nombre;
         $persona->apellido = $request->apellido;
+        $persona->sexo = $request->sexo;
+        $persona->fechanac = $request->fechanac;
         $persona->email = $request->email;
         $persona->dni = $request->dni;
         $persona->telefono = $request->telefono;
