@@ -5,6 +5,9 @@
 
 
 @section('contenido')
+    <div class=" text"  >
+        Datos Personales
+    </div>
 
     <div ><img src="{{ asset('img/pers.jpg')}}"  alt="" class="logo-main"></div>
 

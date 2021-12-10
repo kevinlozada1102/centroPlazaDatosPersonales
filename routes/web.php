@@ -25,3 +25,7 @@ Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.des
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/publicidad' , 'PublicidadController@index')->name('publicidad.index');
+Route::post('/publicidad', 'PublicidadController@store')->name('publicidad.store');
+Route::get('/publicidad/lista', 'PublicidadController@create')->name('publicidad.create');

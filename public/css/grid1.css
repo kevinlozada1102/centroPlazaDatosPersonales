@@ -21,14 +21,14 @@
     font-size: xxx-large;
     font-style: initial;
     font-weight: bolder;
-    font-family: "Copperplate Gothic Bold";
+    /*font-family: "Copperplate Gothic Bold";*/
     color: #fa0030;
 }
 
 .text1{
     text-align: center;
     font-weight: bolder;
-   font-family: Calibri;
+   /*font-family: Calibri;*/
     font-weight: normal;
     font-size: xx-large;
     text-decoration: underline;
@@ -38,7 +38,7 @@
 
     text-align: center;
     font-weight: initial;
-    font-family: Calibri;
+    /*font-family: Calibri;*/
     font-weight: normal;
     font-size: medium;
     text-decoration: underline;
@@ -47,7 +47,7 @@
 }
 .text2{
     font-weight: bolder;
-    font-family: "Times New Roman";
+    /*font-family: "Times New Roman";*/
     font-size: large;
     color: #2d3748;
 }
@@ -100,13 +100,13 @@
 .tbody{
     text-align: center;
     font-weight: normal;
-    font-family: Calibri;
+    /*font-family: Calibri;*/
     font-weight: normal;
     font-size: medium;
 
 }
 .texerror{
-    font-family: "Times New Roman";
+    /*font-family: "Times New Roman";*/
     font-size: medium;
     color: #fa0030;
 }
@@ -115,7 +115,7 @@
 .trbody{
     text-align: center;
     font-weight: normal;
-    font-family: Calibri;
+    /*font-family: Calibri;*/
     font-weight: normal;
     font-size:large;
     color: #1a202c;

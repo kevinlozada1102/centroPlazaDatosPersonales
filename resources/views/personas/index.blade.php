@@ -3,6 +3,9 @@
 
 
 @section('contenido')
+    <div class=" text"  >
+        Datos Personales
+    </div>
 
     <br>
     <br>

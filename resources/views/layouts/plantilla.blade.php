@@ -10,12 +10,13 @@
     <link href="{{ asset('css/grid1.css')}}" rel="stylesheet" >
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico')}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
     <title>DATOS PERSONALES</title>
 </head>
 <body>
-<div class=" text"  >
-    Datos Personales
-</div>
 
     @yield('contenido')
 
