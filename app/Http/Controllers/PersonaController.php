@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
     public function index()
     {
-       $personas = Persona::all();
+        $personas = Persona::where('estado', true)->get();
         return view('personas.index')->with('personas', $personas);
     }
 
@@ -27,7 +26,7 @@ class PersonaController extends Controller
             'nombre'=>'required',
             'apellido'=>'required',
             'sexo'=>'required',
-            'fechanac'=>'required',
+            'fechanac'=>'required | date_format:Y-m-d',
             'email'=>'required|unique:personas',
             'dni'=>'required |max:8 |min:8',
             'telefono'=>'required | min:9 |max:9',
@@ -68,8 +67,8 @@ class PersonaController extends Controller
     public function destroy( $id)
     {
         $persona = Persona::find($id);
-
-        $persona->delete();
+        $persona->estado=false;
+        $persona->save();
         return redirect()->route('personas.index');
     }
 }

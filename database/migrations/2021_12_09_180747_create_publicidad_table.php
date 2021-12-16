@@ -20,6 +20,7 @@ class CreatePublicidadTable extends Migration
             $table->date('fechafinal');
             $table->string('asunto');
             $table->text('contenido');
+            $table->string('imagen');
             $table->boolean('estado')->default(true);
             $table->timestamps();
         });

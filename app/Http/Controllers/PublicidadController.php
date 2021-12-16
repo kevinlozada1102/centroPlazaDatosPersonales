@@ -8,17 +8,19 @@ use Illuminate\Http\Request;
 class PublicidadController extends Controller
 {
     public function index(){
-        return view('publicidad.index');
+        $publicidad = Publicidad::where('estado', true)->get();
+        return view('publicidad.lista')->with('publicidad' , $publicidad);
     }
 
     public function create()
     {
-        return view('publicidad.lista');
+        return view('publicidad.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
+
             'nombre'=>'required',
             'fechainicio'=>'required',
             'fechafinal'=>'required',
@@ -30,6 +32,16 @@ class PublicidadController extends Controller
 
         $publicidad = new Publicidad();
 
+        if ($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $destinationPath = 'img/publicidad/';
+            $filename= time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('imagen')->move($destinationPath,$filename);
+            $publicidad->imagen = $destinationPath . $filename;
+        }
+
+
+
         $publicidad->nombre = $request->nombre;
         $publicidad->fechainicio = $request->fechainicio;
         $publicidad->fechafinal = $request->fechafinal;
@@ -37,13 +49,13 @@ class PublicidadController extends Controller
         $publicidad->contenido = $request->contenido;
 
         $publicidad->save();
-        return redirect()->route('publicidad.index', $publicidad)->with('mensaje', 'Se registro correctamente');
+        return redirect()->route('publicidad.create', $publicidad)->with('mensaje', 'Se registro correctamente');
     }
 
     public function destroy($id){
         $publicidad = Publicidad::find($id);
-
-        $publicidad->delete();
+        $publicidad ->estado=false;
+        $publicidad->save();
         return redirect()->route('publicidad.index');
 
     }

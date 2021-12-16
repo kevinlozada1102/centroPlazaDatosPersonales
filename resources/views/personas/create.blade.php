@@ -9,9 +9,7 @@
         Datos Personales
     </div>
 
-    <div ><img src="{{ asset('img/pers.jpg')}}"  alt="" class="logo-main"></div>
-
-    <div  class="mx-auto "  style="width: 400px;" class="container-fluid" style="background-color: lightseagreen">
+    <div  class="mx-auto "  style="width: 550px;"  style="background-color: lightseagreen">
 
 
 
@@ -22,8 +20,8 @@
 
         @endif
 
-<div  style="align-content:center " >
-    <form action="{{route('personas.create')}}" method="POST" class="formulario">
+<div  style="align-content:center  "   >
+    <form action="{{route('personas.create')}}" method="POST" >
         {{ csrf_field() }}
       <div class="row">
           <div class="col">
@@ -124,18 +122,17 @@
             <br>
         </div>
 
-
-        <div class="modal" id="ventanaModal" tabindex="30" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+        <div   class="modal" id="ventanaModal" tabindex="30" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 id="tituloVentana">Terminos y condiciones</h4>
+                        <h2 id="tituloVentana">Terminos y condiciones</h2>
                         <button  data-dismiss="modal" aria-label="cerrar">
                             <span aria-hidden="true">cerrar</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="text2">
+                        <div class="text2" rows="10" cols="10">
                             <h6><strong>Los tres componentes principales de cualquier política son:
                                     los principios que la  orientan (la ideología o argumentos que la sustentan);
                                     los instrumentos mediante los cuales se ejecuta (incluyendo aspectos de regulación, de financiamiento,
@@ -182,7 +179,7 @@
                                     y de mecanismos de prestación de las políticas) y los servicios o acciones principales
                                     que se llevan o deberían llevarse a cabo de acuerdo a los principios propuestos.</strong></h6>
                         </div>
-                    </div>
+                    </div >
                     <div class="modal-footer">
                        <p></p>
                     </div>
@@ -204,11 +201,10 @@
 
     </form>
     </div>
-    </div>
+</div>
+
+
     <br>
-
-
-
 
 
 @endsection

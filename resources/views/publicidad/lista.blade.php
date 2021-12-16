@@ -1,15 +1,20 @@
 @extends('layouts.plantilla')
 @section('contenido')
 
+    <div class="container">
+        <div class="row">
+            <h1>Lista de Publicidad</h1>
+        </div>
 
 
 
 
 
     <table  class="table" >
-        <thead  class=" bg-info text-white text-center">
+        <thead  class=" text-center">
         <tr>
             <th scope="col">N°</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Nombre</th>
             <th scope="col">Fecha de registro</th>
             <th scope="col">Fecha de finalizacion</th>
@@ -17,9 +22,15 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($public as $publicidad)
+        @foreach($publicidad as $publicidad)
             <tr>
-                <td>{{$publiciad->id}}</td>
+                <td>{{$publicidad->id}}</td>
+
+                <td>
+                    <img src="{{asset ($publicidad->imagen)}}" class="img-fluid img-thumbnail" width="100" alt="">
+                </td>
+
+
                 <td>{{$publicidad->nombre}}</td>
                 <td>{{$publicidad->fechainicio}}</td>
                 <td>{{$publicidad->fechafin}}</td>
@@ -36,3 +47,5 @@
 
         </tbody>
     </table>
+    </div>
+@endsection

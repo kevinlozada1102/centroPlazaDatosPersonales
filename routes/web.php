@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/publicidad' , 'PublicidadController@index')->name('publicidad.index');
-Route::post('/publicidad', 'PublicidadController@store')->name('publicidad.store');
-Route::get('/publicidad/lista', 'PublicidadController@create')->name('publicidad.create');
+Route::get('/publicidad/create' , 'PublicidadController@create')->name('publicidad.create');
+Route::post('/publicidad/create', 'PublicidadController@store')->name('publicidad.store');
+Route::delete('publicidad/{id}' , 'PublicidadController@destroy')->name('publicidad.destroy');
+

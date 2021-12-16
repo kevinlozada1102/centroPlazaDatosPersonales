@@ -1,14 +1,5 @@
-.container{
-    display: grid;
-    grid-template-rows: 100px 100px;
-}
-.containere{
-    display: grid;
-    grid-template-rows: 100px 100px;
-    background-color: #f9f9fa;
-;
 
-}
+
 .estilo{
 
 
@@ -64,22 +55,21 @@
 .body{
     background-color: rgb(244, 238, 246);
     height: 1000px;
-    width: 1300px;
+    width: 1000px;
     border: blue;
     border-bottom-width: medium;
 }
 
 .formulario{
-    margin: 0%;
-    width: 730px;
-    background-color: #c5e8f1;
-    padding: 20px;
-    border-radius: 10px;
+
+    background-color: #0f596c;
+
+
 }
 
 .form{
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -90,7 +80,7 @@
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border-spacing:10px;
+    border-spacing:19px;
     background-color: #e9f1f5;
 
 

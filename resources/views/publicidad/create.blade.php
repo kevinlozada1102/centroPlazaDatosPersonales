@@ -6,10 +6,16 @@
         </div>
     </div>
     <div class="container">
+        @if(session('mensaje'))
+            <div class="alert alert-success">
+                <p>{{session('mensaje')}}</p>
+            </div>
+
+        @endif
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{route('publicidad.index')}}" method="POST" >
-                {{ csrf_field() }}
+                <form action="{{route('publicidad.create')}}" method="POST" enctype="multipart/form-data" >
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
                             <div class="form-group ">
@@ -35,6 +41,9 @@
                             <div class="form-group">
                                 <label for="fechafinal" >Fecha de Fin</label>
                                 <input  class="form-control"   placeholder=" Seleccione fecha final " type="date" name="fechafinal">
+                                @if ($errors->has('fechafinal'))
+                                    <p class="texer">*{{$errors->first('fechafinal') }}</p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -57,12 +66,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="imagen"> Imagen Principal</label>
+                                <input type="file" name="imagen" class="form-control" id="imagen">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                     <div style="text-align: center;">
                         <button type="submit" class="btn btn-primary mb-2">Registrar</button>
                         <br>
                     </div>
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>
+                                        {{$error}}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                 </form>
             </div>
         </div>
     </div>
+
+
 @endsection
