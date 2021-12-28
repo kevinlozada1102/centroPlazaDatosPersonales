@@ -12,6 +12,11 @@
     padding: 7em 0;
 }
 
+.picachu{
+    width: 100%;
+    height: 100%;
+}
+
 .wrap {
     width: 100%;
     overflow: hidden;
@@ -24,4 +29,10 @@
 
 .login-wrap {
     position: relative;
+}
+
+.p{
+    font-size: 120%;
+    line-height: 150%;
+    font-family: "Segoe UI";
 }

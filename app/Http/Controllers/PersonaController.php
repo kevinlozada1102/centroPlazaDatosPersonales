@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class PersonaController extends Controller
@@ -11,6 +12,10 @@ class PersonaController extends Controller
     {
         $personas = Persona::where('estado', true)->get();
         return view('personas.index')->with('personas', $personas);
+    }
+
+    public function registrado(){
+        return view('personas.registrado');
     }
 
 
@@ -28,8 +33,8 @@ class PersonaController extends Controller
             'sexo'=>'required',
             'fechanac'=>'required | date_format:Y-m-d',
             'email'=>'required|unique:personas',
-            'dni'=>'required |max:8 |min:8',
-            'telefono'=>'required | min:9 |max:9',
+            'dni'=>'required|unique:personas|max:8 |min:8',
+            'telefono'=>'required  | min:9 |max:9',
             'direccion'=>'required'
         ]);
 
@@ -46,13 +51,13 @@ class PersonaController extends Controller
         $persona->telefono = $request->telefono;
         $persona->direccion = $request->direccion;
 
-        $persona->save();
-        return redirect()->route('personas.create', $persona)->with('mensaje','Se registro correctamente');
-    }
 
+            $persona->save();
+            return redirect()->route('personas.registrado', $persona)->with('mensaje','Se registro correctamente');
+    }
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)

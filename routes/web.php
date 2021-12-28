@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/personas', 'PersonaController@index')->name('personas.index');
+Route::get('/personas/registrado' , 'PersonaController@registrado')->name('personas.registrado');
 Route::get('/personas/create', 'PersonaController@create')->name('personas.create');
 Route::post('personas/create', 'PersonaController@store')->name('personas.store');
 Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');

@@ -10,17 +10,16 @@
             <div class="alert alert-success">
                 <p>{{session('mensaje')}}</p>
             </div>
-
         @endif
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{route('publicidad.create')}}" method="POST" enctype="multipart/form-data" >
+                <form action="{{route('publicidad.create')}}" method="POST">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
                             <div class="form-group ">
                                 <label for="nombre"> Nombre </label>
-                                <input type="text" class="form-control"  placeholder="Ingresar el nombre"  name="nombre"   >
+                                <input type="text" class="form-control"  placeholder="Ingresar el nombre"  name="nombre" />
                                 @if ($errors->has('nombre'))
                                     <p class="texer">*{{$errors->first('nombre') }}</p>
                                 @endif

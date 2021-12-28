@@ -11,16 +11,8 @@
 
     <div  class="mx-auto "  style="width: 550px;"  style="background-color: lightseagreen">
 
-
-
-        @if(session('mensaje'))
-            <div class="alert alert-success">
-                <p>{{session('mensaje')}}</p>
-            </div>
-
-        @endif
-
 <div  style="align-content:center  "   >
+
     <form action="{{route('personas.create')}}" method="POST" >
         {{ csrf_field() }}
       <div class="row">
@@ -73,7 +65,7 @@
                 <div class="col">
         <div class="form-group">
             <label for="fechanac" class="text2">Fecha De Nacimiento</label>
-            <input  class="form-control"   placeholder=" Seleccione su fecha " type="date" name="fechanac" value="{{old('fechanac')}}">
+            <input  class="form-control"   placeholder=" Seleccione su fecha " type="date" name="fechanac" min="1997-01-01" max="2030-12-31" value="{{old('fechanac')}}">
             @if ($errors->has('fechanac'))
                 <p class="texer">*{{$errors->first('fechanac') }}</p>
             @endif
@@ -123,16 +115,16 @@
         </div>
 
         <div   class="modal" id="ventanaModal" tabindex="30" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog"  role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 id="tituloVentana">Terminos y condiciones</h2>
-                        <button  data-dismiss="modal" aria-label="cerrar">
+                        <h2 id="tituloVentana" class="modal-title">Terminos y condiciones</h2>
+                        <button  type="button" data-dismiss="modal" aria-label="cerrar">
                             <span aria-hidden="true">cerrar</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="text2" rows="10" cols="10">
+                    <div class="modal-body" modal-sm>
+                        <div class="text2">
                             <h6><strong>Los tres componentes principales de cualquier política son:
                                     los principios que la  orientan (la ideología o argumentos que la sustentan);
                                     los instrumentos mediante los cuales se ejecuta (incluyendo aspectos de regulación, de financiamiento,
@@ -185,26 +177,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>
-                            {{$error}}
-                        </li>
-                    @endforeach
-                </ul>
             </div>
-        @endif
+            </div>
+            </div>
 
     </form>
     </div>
 </div>
 
-
-    <br>
 
 
 @endsection
