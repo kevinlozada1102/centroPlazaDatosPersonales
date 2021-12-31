@@ -17,6 +17,7 @@ class CreatePersonasTable extends Migration
             $table->increments('id');
             $table->string('nombre')->length(100);
             $table->string('apellido')->length(100);
+            $table->string('nombrecompleto')->length(200);
             $table->string('email')->unique();
             $table->string('sexo');
             $table->date('fechanac' );

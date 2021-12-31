@@ -16,11 +16,12 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-Route::get('/personas', 'PersonaController@index')->name('personas.index');
+Route::get('/personas/lista', 'PersonaController@index')->name('personas.index');
 Route::get('/personas/registrado' , 'PersonaController@registrado')->name('personas.registrado');
 Route::get('/personas/create', 'PersonaController@create')->name('personas.create');
 Route::post('personas/create', 'PersonaController@store')->name('personas.store');
 Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');
+Route::post('/personas/{id}', 'PersonaController@update')->name('personas.update');
 
 Auth::routes();
 

@@ -25,7 +25,8 @@ class PublicidadController extends Controller
             'fechainicio'=>'required',
             'fechafinal'=>'required',
             'asunto'=>'required',
-            'contenido'=>'required'
+            'contenido'=>'required',
+            'imagen'=>'required'
         ]);
 
 
@@ -39,8 +40,6 @@ class PublicidadController extends Controller
             $uploadSuccess = $request->file('imagen')->move($destinationPath,$filename);
             $publicidad->imagen = $destinationPath . $filename;
         }
-
-
 
         $publicidad->nombre = $request->nombre;
         $publicidad->fechainicio = $request->fechainicio;
