@@ -28,7 +28,7 @@
                   </div>
                   <div class="row justify-content-center">
                       <div class="col-12 col-md-6 text-center">
-                          <a href="http://localhost/centroplaza/personas/create" >REGRESAR</a>
+                          <a href="{{ route('personas.create') }}" >REGRESAR</a>
                       </div>
                   </div>
               </div>

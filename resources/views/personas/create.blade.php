@@ -18,7 +18,7 @@
         </div>
         <div class="row  abs  ">
             <div class="col-12  col-md-6  form  " >
-                <form action="{{route('personas.create')}}" method="POST" class="border p-3 mt-md-3" >
+                <form action="{{route('personas.store')}}" method="POST" class="border p-3 mt-md-3" >
                     {{ csrf_field() }}
                     <div class="row p-3 p-md-0 " >
                             <div class="col-12 col-md-6" style="margin-top: 15px;">

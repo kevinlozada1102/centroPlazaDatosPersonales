@@ -12,13 +12,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
-
-Route::get('/personas/lista', 'PersonaController@index')->name('personas.index');
-Route::get('/personas/registrado' , 'PersonaController@registrado')->name('personas.registrado');
-Route::get('/personas/create', 'PersonaController@create')->name('personas.create');
+Route::get('/admin/personas/listado', 'PersonaController@index')->name('personas.index');
+Route::get('/registroExitoso' , 'PersonaController@registrado')->name('personas.registrado');
+Route::get('/', 'PersonaController@create')->name('personas.create');
 Route::post('personas/create', 'PersonaController@store')->name('personas.store');
 Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');
 Route::post('/personas/{id}', 'PersonaController@update')->name('personas.update');
