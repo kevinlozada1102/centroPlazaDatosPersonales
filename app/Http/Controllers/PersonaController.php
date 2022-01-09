@@ -16,7 +16,7 @@ class PersonaController extends Controller
                     ->select('id','nombre','apellido','email','sexo','fechanac','dni','telefono','direccion','estado')
                     ->where('nombrecompleto','LIKE','%'.$texto.'%')
                     ->orWhere('apellido','asc')
-                    ->paginate(5);
+                    ->paginate(10);
        // dd($personas);
         return view('personas.lista', compact('personas','texto')) ;
     }
@@ -55,9 +55,8 @@ class PersonaController extends Controller
         $persona->sexo = $request->sexo;
         $persona->fechanac = $request->fechanac;
         $persona->email = $request->email;
-        $persona->dni = $request->dni;
         $persona->telefono = $request->telefono;
-        $persona->direccion = $request->direccion;
+
 
 
             $persona->save();

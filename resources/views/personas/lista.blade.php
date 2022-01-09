@@ -25,8 +25,7 @@
                     <table class="table table-striped" style="padding: 1em 2em;">
                         <thead  class=" bg-warning   text-center" style="font-weight: bold;">
                         <tr class="p-sm-0 text-center">
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre Completo</th>
                             <th scope="col">Email</th>
                             <th scope="col">DNI</th>
                             <th scope="col">Sexo</th>
@@ -46,7 +45,6 @@
                         @foreach($personas as $persona)
                             <tr class="text-center">
                                 <td>{{$persona->nombre}}</td>
-                                <td>{{$persona->apellido}}</td>
                                 <td>{{$persona->email}}</td>
                                 <td>{{$persona->dni}}</td>
                                 <td>{{$persona->sexo}}</td>

@@ -20,34 +20,14 @@
             <div class="col-12  col-md-6  form  " >
                 <form action="{{route('personas.store')}}" method="POST" class="border p-3 mt-md-3" >
                     {{ csrf_field() }}
-                    <div class="row p-3 p-md-0 " >
-                            <div class="col-12 col-md-6" style="margin-top: 15px;">
-                                <div class="form-group "  >
-                                    <label for="nombre"  class="form-label">Nombre</label>
-                                    <input type="text" class="form-control border-warning"  placeholder="Ingresa tu nombre"  name="nombre" value="{{old('nombre')}}">
-                                    @if ($errors->has('nombre'))
-                                        <p class="erro">*{{$errors->first('nombre') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6  " style="margin-top: 15px;" >
-                                <div class="form-group">
-                                    <label for="apellido" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control border-warning"  placeholder="Ingresa tu apellido"  name="apellido" value="{{old('apellido')}}">
-                                    @if ($errors->has('apellido'))
-                                        <p class="erro">*{{$errors->first('apellido') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-                    </div>
                     <div class="row p-3 p-md-0">
                         <div class="col-12 col-md-6 "  style="margin-top: 15px;" >
                             <div class="form-group">
-                                <label for="dni" class="form-label" >DNI</label>
-                                <input  class="form-control border-warning"  placeholder=" Ingresa tu DNI" type="number" name="dni" value="{{old('dni')}}">
-                                @if ($errors->has('dni'))
-                                    <p class="erro">*{{$errors->first('dni') }}</p>
-                                @endif
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input  class="form-control border-warning"  placeholder="Ingresa tu telefono" type="number" name="telefono"   value="{{old('telefono')}}">
+                            @if ($errors->has('telefono'))
+                                <p class="erro">*{{$errors->first('telefono') }}</p>
+                            @endif
                             </div>
                         </div>
                         <div class="col-12 col-md-6 "  style="margin-top: 15px;" >
@@ -64,6 +44,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row p-3 p-md-0 " >
+                        <div class="col-12 col-md-12" style="margin-top: 15px;">
+                            <div class="form-group "  >
+                                <label for="nombre"  class="form-label">Nombre Completo </label>
+                                <input type="text" class="form-control border-warning"  placeholder="Ingresa tu nombre"  name="nombre" value="{{old('nombre')}}">
+                                @if ($errors->has('nombre'))
+                                    <p class="erro">*{{$errors->first('nombre') }}</p>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                     <div class="row p-3 p-md-0" >
                         <div class="col-12 col-sm-6" style="margin-top: 15px;">
                             <div class="form-group">
@@ -74,15 +65,12 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6" style="margin-top: 15px;" >
-                            <div class="form-group">
-                                <label for="telefono" class="form-label">Telefono</label>
-                                <input  class="form-control border-warning"  placeholder="Ingresa tu telefono" type="number" name="telefono" value="{{old('telefono')}}">
-                                @if ($errors->has('telefono'))
-                                    <p class="erro">*{{$errors->first('telefono') }}</p>
-                                @endif
+                            <div class="col-12 col-md-6 "  style="margin-top: 15px;" >
+                                <div class="form-group">
+                                    <label for="dni" class="form-label" >DNI</label>
+                                    <input  class="form-control border-warning"  placeholder=" Ingresa tu DNI" type="number" name="dni" value="{{old('dni')}}">
+                                </div>
                             </div>
-                        </div>
                     </div>
                     <div class="row p-3 p-md-0" >
                         <div class="col-12 " style="margin-top: 10px;">
@@ -100,9 +88,6 @@
                             <div class="form-group">
                                 <label for="direccion" class="form-label">Direccion</label>
                                 <input type="text" class="form-control border-warning"  placeholder="Ingresa tu direccion" type="text" name="direccion" value="{{old('direccion')}}">
-                                @if ($errors->has('direccion'))
-                                    <p class="erro">*{{$errors->first('direccion') }}</p>
-                                @endif
                             </div>
                         </div>
                     </div>
@@ -112,7 +97,7 @@
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input border-warning" id="exampleCheck1"  required>
                             <label class="form-check-label" for="exampleCheck1">
-                                <a  style="color: #0a58ca" data-bs-toggle="modal" data-bs-target="#ventanaModal">Acepto los términos y condiciones </a>
+                              <p> Acepto  <a  style="color: #0a58ca" data-bs-toggle="modal" data-bs-target="#ventanaModal"> Términos y Condiciones </a> </p>
                             </label>
                         </div>
                     </div>
